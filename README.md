@@ -78,22 +78,13 @@ JWT_SECRET_DEV=secret
 JWT_SECRET_PROD=
 
 #site urls
-CLIENT_URL_DEV=https://localhost:3000
+CLIENT_URL_DEV=http://localhost:3000
 CLIENT_URL_PROD=https://mern-boilerplate-demo.herokuapp.com
-SERVER_URL_DEV=https://localhost:5000
+SERVER_URL_DEV=http://localhost:5000
 SERVER_URL_PROD=https://mern-boilerplate-demo.herokuapp.com
 
 #img folder path
 IMAGES_FOLDER_PATH=/public/images/
-```
-
-#### Generate certificates
-
-Facebook OAuth requires that your server runs on `https` in development as well, so you need to generate certificates. Go to `/server/security` folder and run this.
-
-```
-$ cd server/security
-$ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout cert.key -out cert.pem -config req.cnf -sha256
 ```
 
 #### Install dependencies
@@ -101,6 +92,12 @@ $ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout cert.key -out cert
 ```
 $ cd server
 $ npm install
+```
+
+#### Create & seed the Database
+
+```
+docker-compose up mdp-mongo
 ```
 
 #### Run the server
