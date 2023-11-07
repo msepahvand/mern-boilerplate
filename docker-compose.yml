@@ -93,7 +93,7 @@ services:
     container_name: mdp-mongo
     restart: unless-stopped
     ports:
-      - '27017'
+      - '27017:27017'
     environment:
       # forwarded
     - MONGO_INITDB_DATABASE
